@@ -1,6 +1,0 @@
-/Users/annaleyahamilton/Projects/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.csprojAssemblyReference.cache
-/Users/annaleyahamilton/Projects/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.csproj.CoreCompileInputs.cache
-/Users/annaleyahamilton/Projects/NumberGuessGame/NumberGuessGame/bin/Debug/NumberGuessGame.exe
-/Users/annaleyahamilton/Projects/NumberGuessGame/NumberGuessGame/bin/Debug/NumberGuessGame.pdb
-/Users/annaleyahamilton/Projects/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.exe
-/Users/annaleyahamilton/Projects/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.pdb
