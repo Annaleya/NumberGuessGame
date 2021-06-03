@@ -4,7 +4,7 @@ namespace NumberGuessGame
 {
     class MainClass
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             Random number = new Random();
 
@@ -32,6 +32,14 @@ namespace NumberGuessGame
                     Console.WriteLine("You win!");
                     win = true;
                 }
+            } while (win == false);
+
+            Console.WriteLine("Press space to restart");
+            ConsoleKeyInfo cki = Console.ReadKey(true);
+            while (cki.Key != ConsoleKey.Escape)
+            {
+                if (cki.Key == ConsoleKey.Spacebar) Main();
+                cki = Console.ReadKey(true);
             }
         }
     }
