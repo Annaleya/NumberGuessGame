@@ -43,6 +43,7 @@ namespace NumberGuessGame
             if (numberOfGuess > maxGuess -2)
             { 
                 Console.WriteLine("Try Again! You have reached maximum number of guesses: " + maxGuess);
+                Score();
                 PlayAgain();
             }
             //method for correct guess
@@ -69,6 +70,18 @@ namespace NumberGuessGame
                 guessTotal++;
                 numberOfGuess++;
                 Console.WriteLine("To low, guess higher...");
+            }
+        }
+
+        private void Level()
+        {
+            if (guess == winNumber)
+            {
+
+            }
+            else if (guess !== winNumber)
+            {
+
             }
         }
         //method for tracking score
