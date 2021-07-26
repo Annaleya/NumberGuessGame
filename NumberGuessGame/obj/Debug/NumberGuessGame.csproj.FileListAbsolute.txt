@@ -4,3 +4,9 @@
 /Users/annaleyahamilton/Projects/NumberGuessGame/NumberGuessGame/bin/Debug/NumberGuessGame.pdb
 /Users/annaleyahamilton/Projects/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.exe
 /Users/annaleyahamilton/Projects/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.pdb
+/Users/annaleyahamilton/Documents/GitHub/NumberGuessGame/NumberGuessGame/bin/Debug/NumberGuessGame.exe
+/Users/annaleyahamilton/Documents/GitHub/NumberGuessGame/NumberGuessGame/bin/Debug/NumberGuessGame.pdb
+/Users/annaleyahamilton/Documents/GitHub/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.csproj.AssemblyReference.cache
+/Users/annaleyahamilton/Documents/GitHub/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.csproj.CoreCompileInputs.cache
+/Users/annaleyahamilton/Documents/GitHub/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.exe
+/Users/annaleyahamilton/Documents/GitHub/NumberGuessGame/NumberGuessGame/obj/Debug/NumberGuessGame.pdb
