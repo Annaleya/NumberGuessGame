@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace NumberGuessGame
 {
     class Program
-    {
-        int correctGuess = 0;
+    {   //data for all games
+        static int correctGuess = 0;
+        static int guessTotal = 0;
 
         public static void Main()
         {
@@ -21,23 +23,35 @@ namespace NumberGuessGame
 
             while (true)
             {
-                int winNumber = random(levelMinNumber, levelMaxNumber);
+                Game currentGame = new Game(levelMinNumber, levelMaxNumber, maxGuess);
+                var stopWatch = new Stopwatch();
+                stopWatch.Start();
 
                 //one game played here
                 bool continuePlaying = true;
-                int guessTotal = 0;
 
                 while (continuePlaying)
                 {
-                    int guess = userData();
-                    guessTotal++;
-                    continuePlaying = CheckInput(guess, guessTotal, winNumber, maxGuess);
+                    continuePlaying = currentGame.PlayNextTurn();
                 }
+                if (currentGame.win)
+                {
+                    correctGuess++;
+                }
+                guessTotal += currentGame.guessTotal;
+                stopWatch.Stop();
+                Console.WriteLine($"It took you {stopWatch.Elapsed.Seconds} seconds to complete this game");
+                Score();
 
                 Console.WriteLine("Would you like to restart? Yes or No");
                 string respond = Console.ReadLine().ToLower();
                 if (respond == "yes")
                 {
+                    //if user plays again, we want to make it harder
+                    if (currentGame.win)
+                    {
+                        levelMaxNumber += levelMaxNumber;
+                    }
                     continue;
                 }
                 //user did not want to play again
@@ -53,58 +67,10 @@ namespace NumberGuessGame
             Console.WriteLine("Welcome to the Random Number Game! To continue, Press enter...");
             Console.ReadLine();
         }
-        //prompt user for guess
-        private int userData()
-        {
-            Console.WriteLine("Guess a number between 0 and 10:");
-            return int.Parse(Console.ReadLine());
-        }
-        /// <summary>
-        /// Checks the guess and tells user if they won, lost or guessed incorrectly
-        /// </summary>
-        /// <param name="guess"></param>
-        /// <returns>True if game is continuing</returns>
-        private bool CheckInput(int guess, int totalGuesses, int winNumber, int maxGuess)
-        {
-            bool continueGame = true;
-            //method for correct guess
-            if (guess == winNumber)
-            {
-                correctGuess++;
-                Console.WriteLine("You win!");
-                Console.WriteLine("Total Guesses:" + totalGuesses);
-                Console.WriteLine("Correct Guesses: " + correctGuess);
-                continueGame = false;
-            }
-            //method for incorrect guess(to high)
-            if (guess > winNumber)
-            {
-                Console.WriteLine("To high, guess lower...");
-            }
-            //method for incorrect guess(to low)
-            else if (guess < winNumber)
-            {
-                Console.WriteLine("To low, guess higher...");
-            }
-            //limit number of total guesses
-            if (continueGame && totalGuesses >= maxGuess)
-            {
-                Console.WriteLine("Try Again! You have reached maximum number of guesses: " + maxGuess);
-                Score(totalGuesses, correctGuess);
-                continueGame = false;
-            }
-
-            return continueGame;
-        }
-
-        private void Level()
-        {
-
-        }
         //method for tracking score
-        private void Score(int totalGuesses, int correctGuesses)
+        private void Score()
         {
-            Console.WriteLine("Total Guesses: " + totalGuesses);
+            Console.WriteLine("Total Guesses: " + guessTotal);
             Console.WriteLine("Correct Guesses: " + correctGuess);
         }
         //method for closing program
@@ -112,12 +78,6 @@ namespace NumberGuessGame
         {
             Console.WriteLine("Press any key to Exit");
             Console.ReadKey();
-        }
-        //method for random number generator
-        private int random(int min, int max)
-        {
-            Random random = new Random();
-            return random.Next(min, max);
         }
     }   
 }
