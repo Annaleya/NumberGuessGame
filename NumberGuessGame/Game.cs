@@ -58,7 +58,10 @@ namespace NumberGuessGame
                 Console.WriteLine("Try Again! You have reached maximum number of guesses: " + maxTurns);
                 gameOver = true;
             }
+
+            return !gameOver;
          }
+
         //checks to see if guess is correct or not
         public bool IsWin(int guess) {
             return guess == random;
