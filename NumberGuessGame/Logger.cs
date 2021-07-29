@@ -6,15 +6,15 @@ namespace NumberGuessGame
     {
         private static string LogFileName = "log.txt";
 
-        public static void Log(string message)
+        public static void WriteToLog(string message)
         {
-            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "logfile.txt")))
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(filePath, "log.txt")))
             {
-                outputFile.WriteLine(DateTime.Now);
-                outputFile.WriteLine();
+                outputFile.WriteLine(DateTime.Now + $" { message}");
             }
         }
+            
     }
 }

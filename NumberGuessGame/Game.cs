@@ -32,7 +32,7 @@ namespace NumberGuessGame
         public bool PlayNextTurn()
          {
             //prompt user for guess
-            Logger.Log("Starting new turn");
+            Logger.WriteToLog("Starting new turn");
             Console.WriteLine($"Guess a number between {minNumber} and {maxNumber}:");
             var guess = int.Parse(Console.ReadLine());
             guessTotal++;
@@ -40,7 +40,7 @@ namespace NumberGuessGame
             //evaluate if the guess is correct
             if (IsWin(guess))
             {
-                Logger.Log("Game won");
+                Logger.WriteToLog("Game won");
                 win = true;
                 gameOver = true;
                 Console.WriteLine("You win!");
@@ -58,7 +58,7 @@ namespace NumberGuessGame
             //console response for too many guesses
            if (!win && IsPastMaxGuesses())
             {
-                Logger.Log("Game lost");
+                Logger.WriteToLog("Game lost");
                 Console.WriteLine("Try Again! You have reached maximum number of guesses: " + maxTurns);
                 gameOver = true;
             }

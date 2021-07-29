@@ -16,7 +16,7 @@ namespace NumberGuessGame
         //method for restarting the game
         private void Play()
         {
-            Logger.Log("Game started");
+            Logger.WriteToLog("Game started");
             Welcome();
             int levelMinNumber = 0;
             int levelMaxNumber = 10;
