@@ -25,6 +25,7 @@ namespace NumberGuessGame
         //generate random number
         private int GenerateRandom(int min, int max)
         {
+            Logger.WriteToLog("Random Number generated");
             Random random = new Random();
             return random.Next(min, max);
         }
@@ -48,10 +49,12 @@ namespace NumberGuessGame
             //console response for incorrect guesses
             if (guess > random)
             {
+                Logger.WriteToLog("Guessed too high");
                 Console.WriteLine("Too high, guess lower...");
             }
             else if (guess < random)
             {
+                Logger.WriteToLog("Guessed too low");
                 Console.WriteLine("Too low, guess higher...");
                 
             }
